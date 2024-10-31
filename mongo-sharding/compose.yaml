@@ -1,3 +1,4 @@
+name: mongo-sharding
 services:
   pymongo_api:
     container_name: pymongo_api
@@ -16,7 +17,6 @@ services:
       MONGODB_DATABASE_NAME: "somedb"
 
   configSrv:
-#    image: mongo:latest
     image: mongo:4.4
     platform: linux/amd64
     container_name: configSrv
@@ -32,7 +32,6 @@ services:
       start_period: 10s
 
   mongos_router:
-#    image: mongo:latest
     image: mongo:4.4
     platform: linux/amd64
     container_name: mongos_router
@@ -46,7 +45,6 @@ services:
       start_period: 10s
 
   shard1:
-#    image: mongo:latest
     image: mongo:4.4
     platform: linux/amd64
     container_name: shard1
@@ -62,7 +60,6 @@ services:
       start_period: 10s
 
   shard2:
-#    image: mongo:latest
     image: mongo:4.4
     platform: linux/amd64
     container_name: shard2
