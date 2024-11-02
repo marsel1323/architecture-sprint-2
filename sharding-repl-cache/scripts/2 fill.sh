@@ -19,11 +19,7 @@ echo "mongos_router готов, начинаем настройку шардир
 
 docker compose exec -T mongos_router mongo --port 27018 --quiet <<EOF
 sh.addShard("shard1/shard1-primary:27019");
-sh.addShard("shard1/shard1-secondary1:27020");
-sh.addShard("shard1/shard1-secondary2:27021");
 sh.addShard("shard2/shard2-primary:27022");
-sh.addShard("shard1/shard2-secondary1:27023");
-sh.addShard("shard1/shard2-secondary2:27024");
 sh.enableSharding("somedb");
 sh.shardCollection("somedb.helloDoc", { "name": "hashed" });
 EOF
