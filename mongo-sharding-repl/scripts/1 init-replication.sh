@@ -46,7 +46,7 @@ EOF
 
 # Задержка для инициализации всех подключений
 echo "Ожидание инициализации mongos_router..."
-sleep 20
+sleep 10
 
 # Проверка статуса шардирования
 docker compose exec -T mongos_router mongo --port 27018 --quiet <<EOF
